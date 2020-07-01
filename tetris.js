@@ -25,6 +25,9 @@ function arenaSweep() {
 
     player.score += rowCount * 10;
     rowCount *= 2;
+    if (player.score > player.highScore) {
+      player.highScore = player.score;
+    }
   }
 }
 
@@ -156,6 +159,9 @@ function playerReset() {
                  (player.matrix[0].length / 2 | 0);
   if (collide(arena, player)) {
     arena.forEach(row => row.fill(0));
+    if (player.score > player.highScore) {
+      player.highScore = player.score;
+    }
     player.score = 0;
     updateScore();
   }
@@ -212,7 +218,8 @@ function update(time = 0) {
 }
 
 function updateScore() {
-  document.getElementById('score').innerText = player.score;
+  document.getElementById('score').innerText = "Current Score:   " + player.score;
+  document.getElementById('highScore').innerText = "High Score:   " + player.highScore;
 }
 
 const colors = [
@@ -231,7 +238,8 @@ const arena = createMatrix(12, 20);
 const player = {
   pos: {x: 0, y: 0}, 
   matrix: null,
-  score: 0
+  score: 0,
+  highScore: 0
 }
 
 document.addEventListener('keydown', event => {
