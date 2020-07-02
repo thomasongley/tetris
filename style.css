@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Scope+One&display=swap');
+
 body {
 	text-align: center;
-	background-color: grey;
+	background-color: #EAF2E3;
+}
+
+h1 {
+	font-family: 'Shrikhand', cursive;
+	color: #F25757;
+}
+
+#score, #highScore {
+	font-family: 'Scope One', serif;
 }
 
 canvas {
-	border: 5px blue solid;
+	/*border: 5px #F2CD60 solid;*/
 }
+
